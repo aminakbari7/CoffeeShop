@@ -63,7 +63,7 @@
 							
 						    <tbody>
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="icon-close"></span></a></td>
+						        <td class="product-remove"><a href="{{URL('/product/deletecart',$cart->id)}}"><span class="icon-close"></span></a></td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image:url({{asset('assets/images/'.$cart->image)}});"></div></td>
 						        
