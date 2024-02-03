@@ -39,9 +39,13 @@ class ProductController extends Controller
         $cart=cart::select()->where('user_id', Auth()->user()->id)->get();
 
         return view("product.showcart",compact("cart"));
-
-
-
+    }
+    public function deletecart($id)
+    {
+                 
+        $cart=cart::find($id);
+        $cart->delete();
+        return redirect()->back();
     }
 
 
