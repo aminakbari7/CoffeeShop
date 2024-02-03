@@ -9,6 +9,8 @@ use Carbon\Carbon;
 
 class ProductController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      */
@@ -24,21 +26,21 @@ class ProductController extends Controller
         return view("product.showsingle",compact("product"));
     }
     public function addcart($id)
-    {
-                 
+    {       
         $product=Product::find($id);
         $addcart=Cart::Create(['user_id'=>auth()->user()->id,'product_id'=>$product->id,
        'image'=>$product->image,
         'price'=>$product->price,
         'name'=>$product->name]);
+ 
         return redirect()->back();
         //return view("product.showsingle",compact("product"));
     }
     public function showcart()
     {
         $cart=cart::select()->where('user_id', Auth()->user()->id)->get();
-
-        return view("product.showcart",compact("cart"));
+        $totalprice=cart::select()->where('user_id', Auth()->user()->id)->sum('price');
+        return view("product.showcart",compact("cart","totalprice"));
     }
     public function deletecart($id)
     {
