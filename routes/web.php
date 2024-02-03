@@ -48,7 +48,7 @@ Route::get('/admin', function () {return view('admin/index');});
 
 
 Route::get('/admin/admins', [AdminController::class, 'listadmin'])->name('listadmin');
-
+Route::get('/admin/createproducts', [AdminController::class, 'createproducts'])->name('createproducts');
 
 
 
