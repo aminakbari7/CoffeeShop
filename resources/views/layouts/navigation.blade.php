@@ -19,6 +19,7 @@
           @endif
           @if(Auth::user()->role=='admin')
           <li class="nav-item"><a href="{{ url('/admin') }}" class="nav-link">Admin panel</a></li>
+          <li class="nav-item"><a href="{{route('createproducts')}}" class="nav-link">create-product</a></li>
           <li class="nav-item"><a href="{{route('listadmin')}}" class="nav-link">admins</a></li>
           @endif
           @endauth
