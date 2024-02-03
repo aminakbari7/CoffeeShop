@@ -34,7 +34,11 @@ Route::middleware('auth')->group(function () {
 
 //product
 Route::get('/product/showsingle/{id}', [App\Http\Controllers\ProductController::class, 'showsingle'])->name('product.showsingle');
+
+
+//cart
 Route::post('/product/showsingle/{id}', [App\Http\Controllers\ProductController::class, 'addcart'])->name('product.addcart');
+Route::get('/product/deletecart/{id}', [App\Http\Controllers\ProductController::class, 'deletecart'])->name('cart.delete');
 
 Route::get('/product/showcart', [App\Http\Controllers\ProductController::class, 'showcart'])->name('cart');
 
