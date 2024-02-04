@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Models\Product\Product;
 use App\Models\cart\Cart;
 use Carbon\Carbon;
@@ -47,6 +48,7 @@ class ProductController extends Controller
                  
         $cart=cart::find($id);
         $cart->delete();
+        Session::flash('msg', 'حذف شد!'); 
         return redirect()->back();
     }
 
