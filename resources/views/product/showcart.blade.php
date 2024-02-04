@@ -27,8 +27,22 @@
     </x-app-layout>
     <!-- END nav -->
 
-
+  
     <section class="ftco-section ftco-cart" dir="rtl">
+    @if(session()->exists('msg'))
+   <h2> <div id="amin" class="alert alert-success" > {{session('msg')}}</div></h2>
+        <script type="text/javascript">
+          window.setTimeout(function() {
+             document.getElementById('amin').outerHTML ='';
+                        }, 2000);
+            </script>
+
+    @else
+    @endif
+
+
+
+
         <div class="container">
             <div class="row">
                 <div class="col-md-12 ftco-animate">
