@@ -29,6 +29,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/product/showcart', [App\Http\Controllers\ProductController::class, 'showcart'])->name('cart');
+    Route::get('/product/deletecart/{id}', [App\Http\Controllers\ProductController::class, 'deletecart'])->name('cart.delete');
+    Route::post('/product/showsingle/{id}', [App\Http\Controllers\ProductController::class, 'addcart'])->name('product.addcart');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -39,10 +43,7 @@ Route::get('/product/showsingle/{id}', [App\Http\Controllers\ProductController::
 
 
 //cart
-Route::post('/product/showsingle/{id}', [App\Http\Controllers\ProductController::class, 'addcart'])->name('product.addcart');
-Route::get('/product/deletecart/{id}', [App\Http\Controllers\ProductController::class, 'deletecart'])->name('cart.delete');
 
-Route::get('/product/showcart', [App\Http\Controllers\ProductController::class, 'showcart'])->name('cart');
 
 //admin
 Route::get('/admin', function () {return view('admin/index');});
