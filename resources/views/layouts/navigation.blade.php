@@ -23,7 +23,7 @@
           <li class="nav-item"><a href="{{route('listadmin')}}" class="nav-link">admins</a></li>
           @endif
           @endauth
-          <li class="nav-item cart"><a href="{{route('cart')}}" class="nav-link"><span class="icon icon-shopping_cart"></span></a>
+          <li class="nav-item cart"><a href="{{route('cart')}}" class="nav-link"><span class="icon icon-shopping_cart"><span class="badge" style="background-color: brown">3</span></span></a>
           @if (Route::has('login'))
                 @auth
                     
