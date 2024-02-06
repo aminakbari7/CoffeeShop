@@ -23,9 +23,13 @@
           <li class="nav-item"><a href="{{route('listadmin')}}" class="nav-link">admins</a></li>
           @endif
           @endauth
+          @if (Route::has('login'))
+          @auth
           <li class="nav-item cart"><a href="{{route('cart')}}" class="nav-link"><span class="icon icon-shopping_cart"><span class="badge" style="background-color: brown">
-            <livewire:notif/>
+           <livewire:notif/>
         </span></span></a>
+        @endauth
+        @endif
           @if (Route::has('login'))
                 @auth
                     
