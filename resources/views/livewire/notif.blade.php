@@ -1,3 +1,3 @@
-<div id="changenotif">
+<div  id="changenotif">
    {{ $count }}
 </div>
