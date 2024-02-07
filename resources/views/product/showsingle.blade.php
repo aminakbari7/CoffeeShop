@@ -27,7 +27,7 @@
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
-
+    
       <div class="slider-item" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
       	<div class="overlay"></div>
         <div class="container">
@@ -85,11 +85,17 @@
 	             	</span>
 	          	</div>
           	</div>
-            <form method="post" action="{{route('product.addcart' ,$product->id)}}">
-              @csrf
-              <button type="submit" name="submit" class="btn-red btn-primary py-3 px-5">add to Cart </button>
-             
-            </form>
+
+
+            
+
+
+            @php
+             $product_id=$product->id;   
+            @endphp
+            <livewire:addcart :product_id="$product_id"/>
+
+            
 
             
     			</div>
