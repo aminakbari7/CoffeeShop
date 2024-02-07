@@ -12,6 +12,7 @@ class Addcart extends Component
 {
  
     public $product_id="";
+    public $count="";
     public function save()
     {
 
@@ -21,6 +22,8 @@ class Addcart extends Component
         'price'=>$product->price,
         'name'=>$product->name]);
         Session()->flash('msg', 'اضافه شد!'); 
+       
+
 
     }
     
@@ -31,6 +34,8 @@ class Addcart extends Component
     }
     public function render()
     {
-        return view('livewire.addcart');
+        $this->count=cart::select()->where('user_id', Auth()->user()->id)->get()->count();
+       
+        return view('livewire.addcart',['count'=>$this->count]);
     }
 }
