@@ -21,6 +21,7 @@ class Addcart extends Component
        'image'=>$product->image,
         'price'=>$product->price,
         'name'=>$product->name]);
+        $this->dispatch('update');
         Session()->flash('msg', 'اضافه شد!'); 
        
 
@@ -34,8 +35,6 @@ class Addcart extends Component
     }
     public function render()
     {
-        $this->count=cart::select()->where('user_id', Auth()->user()->id)->get()->count();
-       
-        return view('livewire.addcart',['count'=>$this->count]);
+        return view('livewire.addcart');
     }
 }
