@@ -12,7 +12,7 @@ class Delcart extends Component
     {
         $cart=cart::find($id);
         $cart->delete();
-        Session()->flash('msg', 'حذف  شد!'); 
+       
     }
     public function render()
     {
