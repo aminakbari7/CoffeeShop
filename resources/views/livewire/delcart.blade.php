@@ -1,4 +1,4 @@
-<div >
+<div wire:poll  >
     <section class="ftco-section " dir="rtl">
             <div class="container">
                 <div class="row">
@@ -15,9 +15,10 @@
                                         <th>Total</th>
                                     </tr>
                                 </thead>
-                                @foreach ($cart as $cart)
-                                    <tbody>
-                                        <tr class="text-center">
+                                <tbody>
+                                    <tr class="text-center">
+                                            @foreach ($cart as $cart)
+                                            @csrf
                                             <td class="product-remove">
                                                 <a  wire:click="delcart({{$cart->id }})"><span
                                                         class="icon-close"></span></a></td>
