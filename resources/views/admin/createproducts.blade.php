@@ -13,13 +13,7 @@
 <body>
   <x-app-layout>
   </x-app-layout>
-  <div dir="rtl" id="wrapper" style="margin-top: 100px;">
-    <div class="container-fluid">
-       <div class="row">
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title mb-5 d-inline">Create Product</h5>
+  <div dir="rtl" id="wrapper" style="margin-top: 100px;" class="col-md-12">
           <form method="POST" action="" enctype="multipart/form-data">
                 <!-- Email input -->
                 <div class="form-outline mb-4 mt-4">
@@ -49,22 +43,12 @@
                 </div>
 
                 <br>
-              
-
-      
                 <!-- Submit button -->
-                <button type="submit" name="submit" class="btn btn-primary  mb-4 text-center">create</button>
+                <button dir="rtl"  type="submit" name="submit" class="btn btn-primary  mb-4 ">create</button>
 
-          
               </form>
-
-            </div>
-          </div>
-        </div>
-      </div>
+           
   </div>
-<script type="text/javascript">
 
-</script>
 </body>
 </html>
