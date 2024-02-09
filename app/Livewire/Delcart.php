@@ -16,6 +16,7 @@ class Delcart extends Component
     {
         $this->del=$id;
         Cart::destroy( $this->del);
+        $this->mount();
         $this->dispatch('update');
         return view('livewire.delcart', ['cart'=> $this->cart]);
     }
