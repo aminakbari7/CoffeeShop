@@ -11,8 +11,12 @@
             </script>
          @else
          @endif
+         @auth
         <button type="submit"  name="submit" class="btn-red btn-primary py-3 px-5" onclick="changefff()">add to Cart </button>
-
+        @endauth
+        @guest
+        <button type="submit"  name="submit" class="btn-red btn-primary py-3 px-5"> <a href="{{ route('login') }}">login</a></button>
+        @endguest
     </form>
   
     
