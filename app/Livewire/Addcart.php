@@ -16,6 +16,7 @@ class Addcart extends Component
     public function save()
     {
 
+       
         $product=Product::find($this->product_id);
         $addcart=Cart::Create(['user_id'=>auth()->user()->id,'product_id'=>$product->id,
        'image'=>$product->image,
@@ -24,7 +25,7 @@ class Addcart extends Component
         $this->dispatch('update');
         Session()->flash('msg', 'اضافه شد!'); 
        
-
+        
 
     }
     
