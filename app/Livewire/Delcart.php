@@ -18,6 +18,7 @@ class Delcart extends Component
         Cart::destroy( $this->del);
         $this->mount();
         $this->dispatch('update');
+        Session()->flash('msg', 'حذف شد!'); 
         return view('livewire.delcart', ['cart'=> $this->cart]);
     }
     public function mount()
