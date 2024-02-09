@@ -1,4 +1,4 @@
-<div wire:poll  >
+<div  >
     <section class="ftco-section " dir="rtl">
             <div class="container">
                 <div class="row">
