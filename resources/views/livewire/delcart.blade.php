@@ -1,5 +1,13 @@
-<div style="margin-bottom: 100px" >
+<div style="margin-bottom: -100px" >
+   
     <section class="ftco-section " dir="rtl">
+        @if (session()->exists('msg'))
+        <div x-data="{show: true}" x-init="setTimeout(() => show = false, 1000)" x-show="show">
+            <div class="alert alert-success">
+                {{ session('msg') }}
+            </div>
+        </div>
+    @endif
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 ">
