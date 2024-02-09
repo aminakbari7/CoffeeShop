@@ -14,17 +14,8 @@ class Delcart extends Component
     public $del;
     public function delcart($id)
     {
-      $i=0;
-      $j=0;
-       foreach ($this->cart as $cart) {
-       if($cart->id==$id) $i=$j;
-       $j++;
-    }
-    $j--;
-    if($i<=$j)
-    $this->cart[$i]=$this->cart[$j];
-        Cart::destroy($id);
-       //$this->cart=cart::select()->where('user_id', Auth()->user()->id)->get();
+        $this->del=$id;
+        Cart::destroy( $this->del);
         $this->dispatch('update');
         return view('livewire.delcart', ['cart'=> $this->cart]);
     }
@@ -36,6 +27,6 @@ class Delcart extends Component
     }
     public function render()
     {
-        return view('livewire.delcart');
+        return view('livewire.delcart',['cart'=> $this->cart]);
     }
 }
