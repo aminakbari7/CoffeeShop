@@ -1,5 +1,4 @@
-<div style="margin-bottom: -100px" >
-   
+<div >
     <section class="ftco-section " dir="rtl">
         @if (session()->exists('msg'))
         <div x-data="{show: true}" x-init="setTimeout(() => show = false, 1000)" x-show="show">
@@ -15,7 +14,10 @@
                             <table class="table">
                                 <thead class="thead-primary">
                                     <tr class="text-center">
-                                        <th>&nbsp;</th>
+                                        <th ><a dir="ltr" href="{{route('cart')}}" class="nav-link"><span class="icon icon-shopping_cart"><span dir="rtl"class="badge" style="background-color: brown">
+                                            <livewire:notif/></span>
+                                        </a>
+                                    </th>
                                         <th>&nbsp;</th>
                                         <th>Product</th>
                                         <th>Price</th>
