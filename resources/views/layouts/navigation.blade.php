@@ -8,7 +8,8 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="{{route('index')}}" class="nav-link">Home</a></li>
-          
+          <li class="nav-item active"><a href="{{route('showproducts')}}" class="nav-link">products</a></li>
+
          
           @auth
            @if(Auth::user()->role!='admin')
