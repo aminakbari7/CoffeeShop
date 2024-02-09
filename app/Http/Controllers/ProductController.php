@@ -19,7 +19,13 @@ class ProductController extends Controller
     {
         //
     }
-
+    
+    public function showproducts()
+    {
+                   
+        $products=Product::all();
+        return view("product.showproducts",['products'=>$products]);
+    }
     public function showsingle($id)
     {
                    
