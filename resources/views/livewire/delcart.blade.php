@@ -7,7 +7,7 @@
             </div>
         </div>
     @endif
-            <div class="container">
+        <div class="container" >
                 <div class="row">
                     <div class="col-md-12 ">
                         <div class="cart-list">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-end">
+                <div class="row justify-content-end" dir="ltr">
                     <div class="col col-lg-3 col-md-6 mt-5 cart-wrap ">
                         <div class="cart-total mb-3">
                             <h3>Cart Totals</h3>
