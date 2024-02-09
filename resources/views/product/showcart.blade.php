@@ -29,7 +29,7 @@
 
    
     <!-- END nav -->
-  
+
     @livewire('delcart')
     
   
