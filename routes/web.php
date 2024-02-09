@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/', function () {return view('welcome');});
 Route::get('/', [HomeController::class, 'index'])->name("index");
+Route::get('/product/showproducts', [App\Http\Controllers\ProductController::class, 'showproducts'])->name('showproducts');
 
 
 
@@ -34,6 +35,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/product/showcart', [App\Http\Controllers\ProductController::class, 'showcart'])->name('cart');
     Route::get('/product/deletecart/{id}', [App\Http\Controllers\ProductController::class, 'deletecart'])->name('cart.delete');
     Route::post('/product/showsingle/{id}', [App\Http\Controllers\ProductController::class, 'addcart'])->name('product.addcart');
+
+   
+
+
+
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
