@@ -23,10 +23,11 @@
 </head>
 
 <body>
-    <x-app-layout>
-    </x-app-layout>
-    <!-- END nav -->
+  
 
+
+   
+    <!-- END nav -->
   
     @livewire('delcart')
     
