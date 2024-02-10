@@ -24,6 +24,7 @@ class ProductController extends Controller
     {
                    
         $products=Product::all();
+        $products = Product::orderBy('created_at', 'DESC')->get();
         return view("product.showproducts",['products'=>$products]);
     }
     public function showsingle($id)
