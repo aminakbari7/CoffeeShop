@@ -11,6 +11,8 @@
     						<p>{{$product->description  }}</p>
     						<p class="price"><span>{{$product->price }}</span></p>
     						<p><a href="{{route('product.showsingle' ,$product->id)}}"class="btn btn-primary btn-outline-primary">Show</a></p>
+							<p><a class="btn btn-primary btn-outline-primary" wire:click="delproduct({{ $product->id }})">حذف</a></p>
+
     					</div>
     				</div>
 				</div>
