@@ -20,7 +20,7 @@
     	</div>
     </section>
 
-  <div class="text-center">
-	{{ $products->links() }}
+  <div class="d-felx justify-content-center">
+	{{ $products->links('livewire.pagination') }}
   </div>
 </div>
