@@ -25,62 +25,7 @@
 	<x-app-layout>
 	</x-app-layout>
     <!-- END nav -->
-    <section class="ftco-section" dir="rtl">
-    	<div class="container">
-        <div class="row">
-			@foreach ($products as $product)
-			<div class="col-md-3">
-				<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url({{asset('storage/images/'.$product->image)}});"></a>
-    					<div class="text text-center pt-4">
-    						<h3><a href="{{route('product.showsingle' ,$product->id)}}">{{$product->name  }}</a></h3>
-    						<p>{{$product->description  }}</p>
-    						<p class="price"><span>{{$product->price }}</span></p>
-    						<p><a href="{{route('product.showsingle' ,$product->id)}}"class="btn btn-primary btn-outline-primary">Show</a></p>
-    					</div>
-    				</div>
-				</div>
-				@endforeach
-        </div>
-
-    	</div>
-    </section>
-
-    <section class="ftco-gallery">
-    	<div class="container-wrap">
-    		<div class="row no-gutters">
-					<div class="col-md-3 ftco-animate">
-						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-1.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-3.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-3.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-					<div class="col-md-3 ftco-animate">
-						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-4.jpg);">
-							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
-						</a>
-					</div>
-        </div>
-    	</div>
-    </section>
-
+@livewire('showproducts')
     
 
     <section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/bg_1.jpg);"  data-stellar-background-ratio="0.5">
