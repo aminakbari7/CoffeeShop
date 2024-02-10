@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Product\Product;
 use App\Models\cart\Cart;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -19,12 +20,16 @@ class ProductController extends Controller
     {
         //
     }
-    
+    public function showp()
+    {
+        return view("product.showproducts");
+    }
     public function showproducts()
     {
                    
-        $products=Product::all();
-        $products = Product::orderBy('created_at', 'DESC')->get();
+        
+       
+        $products = Product::orderBy('created_at', 'DESC')->paginate(8);
         return view("product.showproducts",['products'=>$products]);
     }
     public function showsingle($id)
