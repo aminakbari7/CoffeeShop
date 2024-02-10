@@ -22,8 +22,8 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   </head>
   <body>
-	<x-app-layout>
-	</x-app-layout>
+
+	
     <!-- END nav -->
 @livewire('showproducts')
     <section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/bg_1.jpg);"  data-stellar-background-ratio="0.5">
