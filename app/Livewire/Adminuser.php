@@ -39,6 +39,7 @@ class Adminuser extends Component
         $userss=user::orderBy('created_at', 'DESC')->paginate(4);
         return view('livewire.adminuser',['userss'=>$userss]);
     }
+    
 public function deleteuser($id)
 {
 
@@ -56,8 +57,14 @@ public function updateuser($id)
     $userss=user::orderBy('created_at', 'DESC')->paginate(4);
     return view('livewire.adminuser',['userss'=>$userss]);
 }
+public function updateduid()
+{
+    $this->resetPage();
+
+}
     public function render()
     {
+
         $userss=user::orderBy('created_at', 'DESC')->paginate(4);
         return view('livewire.adminuser',['userss'=>$userss]);
     }
