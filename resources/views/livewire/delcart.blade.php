@@ -30,7 +30,7 @@
                                             @foreach ($cart as $cart)
                                             @csrf
                                             <td class="product-remove">
-                                                <a  wire:click="delcart({{$cart->id }})"><span
+                                                <a  wire:click="delcart({{$cart->id }})"wire:confirm="Are you sure?"><span
                                                         class="icon-close"></span></a></td>
     
                                             <td class="image-prod">
