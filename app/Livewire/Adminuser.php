@@ -45,13 +45,13 @@ public function deleteuser($id)
 
 
     $this->uid = $id;
-    
     user::destroy($this->uid);
     $userss=user::orderBy('created_at', 'DESC')->paginate(4);
     return view('livewire.adminuser',['userss'=>$userss]);
 }
 public function updateuser($id)
-{$this->resetPage();
+{
+    
     $this->key = 1;
     $this->upid = $id;
     $userss=user::orderBy('created_at', 'DESC')->paginate(4);
