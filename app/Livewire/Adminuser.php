@@ -21,9 +21,19 @@ class Adminuser extends Component
 
     public function save($id){
         $user=User::find($id);
-        $user->email = $this->newemail;
-        $user->name= $this->newname;
-        $user->save();
+        if($this->newemail!=null)
+        {
+            $user->email = $this->newemail;
+        }
+        if($this->newname!=null)
+        {
+            $user->name= $this->newname;
+        }
+        if($this->newname!=null || $this->newemail!=null)
+        {
+            $user->save();
+        }
+       
         $this->uid=0;
         $this->key =-1;
         $userss=user::orderBy('created_at', 'DESC')->paginate(4);
