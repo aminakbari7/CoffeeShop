@@ -27,7 +27,7 @@
   
 
 
-   
+    @include('layouts.navigation')
     <!-- END nav -->
 
     @livewire('delcart')
