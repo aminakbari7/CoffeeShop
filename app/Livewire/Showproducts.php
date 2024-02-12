@@ -6,10 +6,12 @@ use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
 use Livewire\WithPagination;
+use Livewire\Attributes\On;
 class Showproducts extends Component
 {    use WithPagination;
 
    public $pid;
+   public $key;
 
     public function delproduct($id)
     {
@@ -21,10 +23,18 @@ class Showproducts extends Component
     }
 
 
+    #[On("usersearch")]
+    public function showsearch($search)
+    {   
+        $this->key=$search;
+        $products = Product::select()->where('name','LIKE',"%$search%")->paginate(8);
+        return view('livewire.showproducts',['products'=>$products]);
+
+    }
+    
     public function render()
     {
-       
-        $products = Product::orderBy('created_at', 'DESC')->paginate(8);
+        $products = Product::select()->where('name','LIKE',"%$this->key%")->paginate(8);
         return view('livewire.showproducts',['products'=>$products]);
     }
 }
