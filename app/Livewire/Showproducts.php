@@ -11,6 +11,7 @@ class Showproducts extends Component
 {    use WithPagination;
 
    public $pid;
+   public $size;
    public $key;
 
     public function delproduct($id)
@@ -18,7 +19,9 @@ class Showproducts extends Component
         $this->pid=$id;
         product::destroy($this->pid);
         Session()->flash('msg', 'حذف شد!'); 
+        $this->resetPage();
         $products = Product::orderBy('created_at', 'DESC')->paginate(8);
+        $this->size=$products->count();
         return view('livewire.showproducts',['products'=>$products]);
     }
 
@@ -28,6 +31,7 @@ class Showproducts extends Component
     {   
         $this->key=$search;
         $products = Product::select()->where('name','LIKE',"%$search%")->paginate(8);
+        $this->size=$products->count();
         return view('livewire.showproducts',['products'=>$products]);
 
     }
@@ -35,6 +39,7 @@ class Showproducts extends Component
     public function render()
     {
         $products = Product::select()->where('name','LIKE',"%$this->key%")->paginate(8);
+        $this->size=$products->count();
         return view('livewire.showproducts',['products'=>$products]);
     }
 }
