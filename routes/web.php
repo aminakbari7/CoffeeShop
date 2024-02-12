@@ -8,6 +8,7 @@ use App\Livewire\Addcart;
 use App\Livewire\Adminuser;
 use App\Livewire\Delcart;
 use App\Livewire\Notif;
+use App\Livewire\Searchproduct;
 use App\Livewire\Showproducts;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {return view('welcome');});
 Route::get('/', [HomeController::class, 'index'])->name("index");
 Route::get('/product/showproducts', [App\Http\Controllers\ProductController::class, 'showp'])->name('showp');
+Route::get('/product/searchproduct', [App\Http\Controllers\ProductController::class, 'searchproduct'])->name('searchproduct');
 
 
 
@@ -69,6 +71,9 @@ Route::get('/addcart', Addcart::class);
 Route::get('/delcart', Delcart::class); 
 Route::get('/showproducts', Showproducts::class); 
 Route::get('/adminusers', Adminuser::class); 
+Route::get('/searchproduct', Searchproduct::class);
+
+
 
 
 
