@@ -3,6 +3,18 @@
     <section class="ftco-section" dir="rtl">
     	<div class="container">
         <div class="row">
+			@if($size==0)
+
+				<div class="col-md-3">
+				<div class="menu-entry">
+    					<div class="text text-center pt-4">
+    						<h3 class="text-success">search result</a></h3>
+    						<p class="text-warning">nothing found</p>
+
+    					</div>
+    				</div>
+				</div>
+			@endif
 			@foreach ($products as $product)
 			<div class="col-md-3">
 				<div class="menu-entry">
