@@ -14,22 +14,11 @@
                <strong> search</strong>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <div class="dropdown-item" id="navbarSupportedContent">
-                  <form class="form-inline my-2 my-lg-0" style="display:inline-block;">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
+                @livewire('searchproduct')
               </div>
           </li>
-
-
-
-
-
-
-          <li class="nav-item active"><a href="{{route('index')}}" class="nav-link">Home</a></li>
-          <li class="nav-item active"><a href="{{route('showp')}}" class="nav-link">products</a></li>
+          <li class="nav-item "><a href="{{route('index')}}" class="nav-link">Home</a></li>
+          <li class="nav-item "><a href="{{route('showp')}}" class="nav-link">products</a></li>
 
           @auth
            @if(Auth::user()->role!='admin')
@@ -42,7 +31,7 @@
           <li class="nav-item"><a href="{{ url('/admin') }}" class="nav-link">Admin panel</a></li>
           <li class="nav-item"><a href="{{route('createproducts')}}" class="nav-link">create-product</a></li>
           <li class="nav-item"><a href="{{route('listadmin')}}" class="nav-link">admins</a></li>
-          <li class="nav-item active"><a href="{{route('showusers')}}" class="nav-link">users</a></li>
+          <li class="nav-item"><a href="{{route('showusers')}}" class="nav-link">users</a></li>
 
           @endif
           @endauth
