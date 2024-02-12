@@ -74,6 +74,7 @@
              $product_id=$product->id;   
             @endphp
             <livewire:addcart :product_id="$product_id"/> 
+            
     			</div>
     		</div>
     	</div>
