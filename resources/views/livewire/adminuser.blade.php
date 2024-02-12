@@ -17,7 +17,7 @@
                         <td>{{ $users->name }}</td>
                         <td>{{ $users->email }}</td>
                         <td><a  wire:click="deleteuser({{ $users->id }})" class="btn btn-danger mb-4 text-center float-left" style="margin-right: 10px;"><Span style="color: black">delete<span></a>
-                        <a wire:click="updateuser({{ $users->id }})" class="btn btn-warning mb-4 text-center float-left"><Span style="color: black">edit<span></a></td>
+                        <a wire:click="updateuser({{ $users->id }})" wire:key="users-{{ $users->id }}"class="btn btn-warning mb-4 text-center float-left"><Span style="color: black">edit<span></a></td>
 
                         </td>
                       </tr>
