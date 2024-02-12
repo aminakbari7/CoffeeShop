@@ -1,4 +1,5 @@
 <div>
+	<div>
     <section class="ftco-section" dir="rtl">
     	<div class="container">
         <div class="row">
@@ -25,4 +26,5 @@
   <div class="d-felx justify-content-center">
 	{{ $products->links('livewire.pagination') }}
   </div>
+</div>
 </div>
