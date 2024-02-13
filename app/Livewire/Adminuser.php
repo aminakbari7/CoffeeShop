@@ -16,8 +16,14 @@ class Adminuser extends Component
     public $upid=0;
     public $newname;
     public $newemail;
+    public $searchuser;
+
+    public function searchu()
+    {
+        $this->resetPage(); 
 
 
+    }
 
     public function save($id){
         $user=User::find($id);
@@ -46,7 +52,8 @@ public function deleteuser($id)
 
     $this->uid = $id;
     user::destroy($this->uid);
-    $userss=user::orderBy('created_at', 'DESC')->paginate(4);
+    $userss=user::select()->where('name','LIKE',"%$this->searchuser%")->paginate(4);
+
     return view('livewire.adminuser',['userss'=>$userss]);
 }
 public function updateuser($id)
@@ -61,7 +68,8 @@ public function updateuser($id)
     public function render()
     {
         
-        $userss=user::orderBy('created_at', 'DESC')->paginate(4);
+        $userss=user::select()->where('name','LIKE',"%$this->searchuser%")->paginate(4);
+
         return view('livewire.adminuser',['userss'=>$userss]);
     }
 }
