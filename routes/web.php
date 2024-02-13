@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Livewire\Addcart;
+use App\Livewire\Adminpanel;
 use App\Livewire\Adminuser;
 use App\Livewire\Delcart;
 use App\Livewire\Notif;
@@ -58,8 +59,7 @@ Route::get('/product/showsingle/{id}', [App\Http\Controllers\ProductController::
 
 
 //admin
-Route::get('/admin', function () {return view('admin/index');});
-
+Route::get('/admin/panel', function () {return view('admin/panel');})->name('adminpanel');
 
 Route::get('/admin/admins', [AdminController::class, 'listadmin'])->name('listadmin');
 Route::get('/admin/showusers', [AdminController::class, 'showusers'])->name('showusers');
@@ -72,7 +72,7 @@ Route::get('/delcart', Delcart::class);
 Route::get('/showproducts', Showproducts::class); 
 Route::get('/adminusers', Adminuser::class); 
 Route::get('/searchproduct', Searchproduct::class);
-
+Route::get('/adminpanel', Adminpanel::class);
 
 
 
