@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Livewire\Addcart;
 use App\Livewire\Adminpanel;
+use App\Livewire\Admins;
 use App\Livewire\Adminshow;
 use App\Livewire\Adminuser;
 use App\Livewire\Delcart;
@@ -74,8 +75,9 @@ Route::get('/showproducts', Showproducts::class);
 Route::get('/adminusers', Adminuser::class); 
 Route::get('/searchproduct', Searchproduct::class);
 Route::get('/adminpanel', Adminpanel::class);
+Route::get('/admins',Admins::class);
 
-Route::get('/adminshow', Adminshow::class);
+
 
 
 require __DIR__.'/auth.php';
