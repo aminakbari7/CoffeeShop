@@ -24,8 +24,11 @@
     						<p>{{$product->description  }}</p>
     						<p class="price"><span>{{$product->price }}</span></p>
     						<p><a href="{{route('product.showsingle' ,$product->id)}}"class="btn btn-primary btn-outline-primary">Show</a></p>
+							@auth
+							@if(auth()->user()->role=='admin')
 							<p><a class="btn btn-primary btn-outline-primary" wire:key="product-{{ $product->id }}" wire:click="delproduct({{ $product->id }})">حذف</a></p>
-
+							@endif
+							@endauth
     					</div>
     				</div>
 				</div>
