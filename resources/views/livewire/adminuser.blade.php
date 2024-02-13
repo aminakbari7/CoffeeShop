@@ -7,6 +7,15 @@
                     <th scope="col">#</th>
                     <th scope="col">username</th>
                     <th scope="col">email</th>
+                    <th scope="col">
+                      <div class="navbar navbar-expand-lg navbar-light">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <input  wire:model="searchuser" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                          <button wire:click="searchu()"class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        
+                        </div>
+                      </div>
+                    </th>
                   </tr>
                 </thead>
                 
