@@ -13,6 +13,6 @@
 <body>
   <x-app-layout>
   </x-app-layout>
-@livewire('adminshow');
+@livewire('admins')
 </body>
 </html>
