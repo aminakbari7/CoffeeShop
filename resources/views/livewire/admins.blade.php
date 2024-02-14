@@ -30,6 +30,17 @@
  
                          </td>
                        </tr>
+                       @if($key==1 && $upid==$users->id)
+                       <tr>
+                       
+                         <!-- Email input -->
+                         <td>new detail</td>
+                         <td><input type="text"  class="form-control red" value="{{$users->name}}" placeholder="{{$users->name}}"   wire:model="newname" /> </td>
+                           <td> <input type="text"  class="form-control" value="{{$users->email}}" placeholder="{{$users->email}}" wire:model="newemail" /> </td>
+                           <td><button wire:click="save({{ $users->id }})"type="submit" name="submit" class="btn btn-success  mb-4 text-center" style="background-color: green">save</button></td>
+                  
+                 </tr>
+                       @endif
                      @endforeach
                  </tbody>
                </table> 
