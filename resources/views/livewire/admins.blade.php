@@ -46,6 +46,8 @@
                </table> 
                
            </div>
-               
+           <div class="d-felx justify-content-center">
+            {{ $adminss->links('livewire.pagination') }}
+            </div>
  </div>
  
