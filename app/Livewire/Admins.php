@@ -17,7 +17,7 @@ class Admins extends Component
     public $upid=0;
     public $newname;
     public $newemail;
-    public function searchu()
+    public function searchuser()
     {
         $this->resetPage(); 
 
@@ -40,16 +40,30 @@ class Admins extends Component
        
         $this->uid=0;
         $this->key =-1;
-        $userss=user::orderBy('created_at', 'DESC')->paginate(4);
-        return view('livewire.adminuser',['userss'=>$userss]);
+        $adminss = User::select()->where('role', 'admin')->paginate(4);
+        return view('livewire.adminuser',['adminss '=>$adminss ]);
     }
-   public function searchuser()
-   {
 
-   }
+    public function deleteuser($id)
+    {
+        $this->uid = $id;
+        user::destroy($this->uid);
+        $adminss = User::select()->where('role', 'admin')->paginate(4);
+      
+        return view('livewire.admins',[ 'adminss'=> $adminss]);
+    }
+    public function updateuser($id)
+    {
+        
+        $this->key = 1;
+        $this->upid = $id;
+        $adminss = User::select()->where('role', 'admin')->paginate(4);
+      
+        return view('livewire.admins',[ 'adminss'=> $adminss]);
+    }
     public function render()
     {
-        $adminss = User::select()->where('role', 'admin')->get();
+        $adminss = User::select()->where('role', 'admin')->paginate(4);
       
         return view('livewire.admins',[ 'adminss'=> $adminss]);
     }
