@@ -36,15 +36,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    //cart
     Route::get('/product/showcart', [App\Http\Controllers\ProductController::class, 'showcart'])->name('cart');
     Route::get('/product/deletecart/{id}', [App\Http\Controllers\ProductController::class, 'deletecart'])->name('cart.delete');
     Route::post('/product/showsingle/{id}', [App\Http\Controllers\ProductController::class, 'addcart'])->name('product.addcart');
 
-   
-
-
-
-
+    //auth dashboards
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -54,18 +51,11 @@ Route::middleware('auth')->group(function () {
 Route::get('/product/showsingle/{id}', [App\Http\Controllers\ProductController::class, 'showsingle'])->name('product.showsingle');
 
 
-//cart
-
-
 //admin
 Route::get('/admin', function () {return view('admin/index');});
-
-
 Route::get('/admin/admins', [AdminController::class, 'listadmin'])->name('listadmin');
 Route::get('/admin/showusers', [AdminController::class, 'showusers'])->name('showusers');
-
 Route::get('/admin/createproducts', [AdminController::class, 'createproducts'])->name('createproducts');
-
 Route::get('/notif', Notif::class);
 Route::get('/addcart', Addcart::class);
 Route::get('/delcart', Delcart::class); 
