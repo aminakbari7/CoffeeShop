@@ -9,6 +9,7 @@ use App\Livewire\Adminpanel;
 use App\Livewire\Admins;
 use App\Livewire\Adminshow;
 use App\Livewire\Adminuser;
+use App\Livewire\Comment;
 use App\Livewire\Delcart;
 use App\Livewire\Notif;
 use App\Livewire\Searchproduct;
@@ -55,14 +56,13 @@ Route::get('/product/showsingle/{id}', [App\Http\Controllers\ProductController::
 
 
 //admin
-<<<<<<< HEAD
+
 Route::get('/admin', function () {return view('admin/index');});
 Route::get('/admin/admins', [AdminController::class, 'listadmin'])->name('listadmin');
-=======
 Route::get('/admin/panel', function () {return view('admin/panel');})->name('adminpanel');
 
 Route::get('/admin/adminshow', function () {return view('admin/adminshow');})->name('listadmin');
->>>>>>> 6c8da7e65486f660dfb00ec6d9ec5ed0860a7ce0
+
 Route::get('/admin/showusers', [AdminController::class, 'showusers'])->name('showusers');
 Route::get('/admin/createproducts', [AdminController::class, 'createproducts'])->name('createproducts');
 Route::get('/notif', Notif::class);
@@ -73,7 +73,7 @@ Route::get('/adminusers', Adminuser::class);
 Route::get('/searchproduct', Searchproduct::class);
 Route::get('/adminpanel', Adminpanel::class);
 Route::get('/admins',Admins::class);
-
+Route::get('/comment',Comment::class);
 
 
 
