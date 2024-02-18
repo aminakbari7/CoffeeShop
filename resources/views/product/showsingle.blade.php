@@ -74,12 +74,11 @@
              $product_id=$product->id;   
             @endphp
             <livewire:addcart :product_id="$product_id"/> 
-            
     			</div>
     		</div>
     	</div>
     </section>
-
+@livewire('comment')
 
     <footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>
