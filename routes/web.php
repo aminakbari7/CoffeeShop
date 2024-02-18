@@ -10,6 +10,8 @@ use App\Livewire\Admins;
 use App\Livewire\Adminshow;
 use App\Livewire\Adminuser;
 use App\Livewire\Comment;
+use App\Livewire\Commentcheck;
+use App\Livewire\Commentp;
 use App\Livewire\Delcart;
 use App\Livewire\Notif;
 use App\Livewire\Searchproduct;
@@ -73,8 +75,7 @@ Route::get('/adminusers', Adminuser::class);
 Route::get('/searchproduct', Searchproduct::class);
 Route::get('/adminpanel', Adminpanel::class);
 Route::get('/admins',Admins::class);
-Route::get('/comment',Comment::class);
-
+Route::get('/commentchek',Commentcheck::class);
 
 
 require __DIR__.'/auth.php';
