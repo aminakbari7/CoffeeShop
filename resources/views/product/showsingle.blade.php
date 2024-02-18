@@ -78,7 +78,8 @@
     		</div>
     	</div>
     </section>
-@livewire('comment')
+    
+    <livewire:commentcheck :product_id="$product_id"/> 
 
     <footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>
