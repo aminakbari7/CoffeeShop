@@ -7,9 +7,9 @@
                     <div class="row">
                     <div class="comment mt-4 text-justify ">
                         <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
-                        <h4>Jhon Doe</h4>
+                        <h4></h4>
                         <span>- 20 October, 2018</span>
-                        @if($keyu==-1 || $idu!=$comment->id && $comment->user_id==auth()->user()->id)
+                        @if($keyu==-1 && auth()->user()->id==$comment->user_id)
                         <button wire:key="comment-{{ $comment->id }}" wire:click="deletec({{ $comment->id }})" type="button" class="btn btn-outline-danger" style="margin-left: 30px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"></path>
@@ -22,13 +22,11 @@
                             </svg>
                           </button>
                         <br>
-                        <p>{{ $comment->body }}</p>
                         @endif
+                        <p>{{ $comment->body }}</p>
 
 
-
-
-                        @if($keyu!=-1 && $idu==$comment->id && $comment->user_id==auth()->user()->id)
+                        @if($keyu!=-1 && $idu==$comment->id && $comment->user_id==auth()->user()->id )
 
                        
                         <form wire:submit="editc({{ $comment->id }})">
