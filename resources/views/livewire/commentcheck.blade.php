@@ -49,7 +49,6 @@
         <div class="col-lg-4 " style="margin-top: 20px;margin-top:80px" >
             <form wire:submit="save({{ $product_id }})">
                 <h4>Leave a comment</h4>
-                {{ $cbody }}
                 <textarea wire:model="cbody" name="cbody" cols="20" rows="2" class="form-control" style="background-color: black;" placeholder="....."></textarea>
                 <button type="submit"  name="submit" class="btn btn-outline-success my-2 my-sm-0" >send comment </button>
             </form>
