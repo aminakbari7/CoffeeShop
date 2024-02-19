@@ -69,8 +69,8 @@ class Commentcheck extends Component
         'body'=>$this->cbody]);
         $this->cbody="";
         $this->size=comment::select()->where('product_id', $this->product_id)->count();
-    $this->comments=comment::select()->where('product_id', $this->product_id)->get();
-    return view('livewire.commentcheck');
+        $this->comments=comment::select()->where('product_id', $this->product_id)->get();
+        return view('livewire.commentcheck',['cbody'=>$this->cbody]);
 
     }
     
