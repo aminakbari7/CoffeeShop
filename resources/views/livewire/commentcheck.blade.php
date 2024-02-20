@@ -1,5 +1,4 @@
-
-    <div class="container">
+<div class="container">
             <div class="col-sm-5 ">
                 <h1>Comments={{ $size }}</h1>
                  @if($size>0)
