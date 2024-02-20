@@ -1,12 +1,14 @@
 <div class="container">
             <div class="col-sm-5 ">
                 <h1>Comments={{ $size }}</h1>
+                @Auth
                  @if($size>0)
                     @foreach ($comments as  $comment)
                     <div class="row">
                     <div class="comment mt-4 text-justify ">
                         <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
                         <h4></h4>
+                       
                         <span>- 20 October, 2018</span>
                         @if($keyu==-1 && auth()->user()->id==$comment->user_id)
                         <button wire:key="comment-{{ $comment->id }}" wire:click="deletec({{ $comment->id }})" type="button" class="btn btn-outline-danger" style="margin-left: 30px">
@@ -44,6 +46,7 @@
                 </div>
                     @endforeach
                     @endif
+                    @endauth
         </div>
         <div class="col-lg-4 " style="margin-top: 20px;margin-top:80px" >
             <form wire:submit="save({{ $product_id }})">
